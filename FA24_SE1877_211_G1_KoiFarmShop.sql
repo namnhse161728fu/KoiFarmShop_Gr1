@@ -28,7 +28,7 @@ Create table Account
 	Role nvarchar(20) --Manager, Staff, Customer
 )
 
-CREATE TABLE [dbo].[Order] (
+CREATE TABLE Order (
     OrderID INT PRIMARY KEY IDENTITY(1,1),
     AccountID INT,
     OrderDate DATETIME DEFAULT GETDATE(),
@@ -42,7 +42,7 @@ CREATE TABLE [dbo].[Order] (
     FOREIGN KEY (AccountID) REFERENCES Account(AccountID)
 );
 
-CREATE TABLE consignments (
+CREATE TABLE Consignments (
     ID INT IDENTITY(1,1) PRIMARY KEY,
     AccountID int NOT NULL,
     ProductName NVARCHAR(255) NOT NULL,
